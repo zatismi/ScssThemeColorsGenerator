@@ -13,17 +13,64 @@
 <body class="container mt-5" style="min-width: 700px; max-width: 730px;">
     <h3 class="text-center border-bottom pb-4">SCSS Theme Colors Generator<br>(Tre-Formaggi) 🧀🧀🧀</h3>
 
-    <h4>SCSS input:</h4>
-    <textarea id="inputField" class="form-control mb-3" placeholder="Paste your color data here"
-        onchange="reactivateCleanBtn()"></textarea>
-    <div class="d-flex justify-content-between mb-3">
-        <button id="convertButton" class="btn btn-primary" onclick="viewCleanScss(); deactivateCleanBtn()">
-            Clean File
-        </button>
-        <button id="resetInputField" class="btn btn-danger" onclick="resetInputField()">
-            Reset Inputs
-        </button>
+    <nav>
+        <div class="nav nav-tabs d-flex" id="nav-tab" role="tablist">
+            <button class="nav-link active w-50" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                aria-controls="nav-home" aria-selected="true">JSON Input</button>
+            <button class="nav-link w-50" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                aria-controls="nav-profile" aria-selected="false">Main Theme Colors Inputs</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <!-- First Tab -->
+
+            <h4 class="mt-3">JSON input:</h4>
+            <textarea id="inputField" class="form-control mb-3" placeholder="Paste your color data here"
+                onchange="reactivateCleanBtn()"></textarea>
+            <div class="d-flex justify-content-between mb-3">
+                <button id="convertButton" class="btn btn-primary" onclick="viewCleanScss(); deactivateCleanBtn()">
+                    Clean File
+                </button>
+                <button id="resetInputField" class="btn btn-danger" onclick="resetInputField()">
+                    Reset Inputs
+                </button>
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <!-- Second Tab -->
+            <div>
+                <label for="customThemeName">Theme Name:</label>
+                <input type="text" id="themeName" placeholder="Enter Theme Name">
+            </div>
+            <div>
+                <label for="customDarknerColor">Darkner Color:</label>
+                <input type="color" id="customDarknerColor">
+                <div>
+                    <input type="text" id="customDarknerColorRgb" readonly>
+                </div>
+            </div>
+            <div>
+                <label for="customMidtoneColor">Midtones Color:</label>
+                <input type="color" id="customMidtoneColor">
+                <div>
+                    <input type="text" id="customMidtoneColorRgb" readonly>
+                </div>
+            </div>
+            <div>
+                <label for="customLightnerColor">Lightner Color:</label>
+                <input type="color" id="customLightnerColor">
+                <div>
+                    <input type="text" id="customLightnerColorRgb" readonly>
+                </div>
+            </div>
+            <button id="addCustomThemeBtn" onclick="adddCustomThemeAndShow(); viewCleanScss()">Add Theme</button>
+        </div>
     </div>
+
+
 
     <div class="position-relative">
         <div class="row" id="clean-options" style="margin-top: 50px;">
@@ -44,13 +91,15 @@
                             <select id="activeTheme" class="form-control" onchange="viewCleanScss()"></select>
                         </td>
                         <td>
-                            <input type="number" id="multiplier" class="form-control" value="1" min="1" max="100" onchange="viewCleanScss()" />
+                            <input type="number" id="multiplier" class="form-control" value="1" min="1" max="100"
+                                onchange="viewCleanScss()" />
                         </td>
                         <td>
                             <input type="checkbox" id="vintageOn" onchange="viewCleanScss()" />
                         </td>
                         <td>
-                            <input type="number" id="balancer" class="form-control" value="0" min="0" max="500" onchange="viewCleanScss()"/>
+                            <input type="number" id="balancer" class="form-control" value="0" min="0" max="500"
+                                onchange="viewCleanScss()" />
                         </td>
                         <td>
                             <input type="checkbox" id="complement" onchange="toggleCompletion(); viewCleanScss()" />
@@ -64,9 +113,9 @@
         </div>
 
         <div class="my-3">
-            <h4 class="monitor-title">Generate SCSS</h4>
             <div id="monitor-all"
                 class="position-relative d-flex flex-column justify-content-center align-items-center">
+                <h4 class="monitor-title">SCSS V-Monitor</h4>
                 <button class="btn btn-secondary mb-3 copy-btn" onclick="copyToClipboard()">
                     📄
                 </button>
@@ -122,6 +171,10 @@
         </div>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./index.js"></script>
 </body>
 

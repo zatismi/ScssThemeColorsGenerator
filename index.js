@@ -376,3 +376,46 @@ function deactivateCleanBtn() {
   let button = document.getElementById("convertButton");
   button.disabled = true;
 }
+
+function adddCustomThemeAndShow() {
+  let customThemeName = document.getElementById("themeName").value.trim();
+  let customThemeDarkner = document.getElementById("customDarknerColor").value;
+  let customThemeMidtones = document.getElementById("customMidtoneColor").value;
+  let customThemeLightner = document.getElementById("customLightnerColor").value;
+
+  if (!customThemeName || !customThemeDarkner || !customThemeMidtones || !customThemeLightner) {
+      alert("Please fill all fields before generating the theme.");
+      return;
+  }
+
+  function rgbStringToArray(rgbString) {
+      return rgbString.match(/\d+/g).map(Number);
+  }
+
+  let themes = {};
+  if (!themes[customThemeName]) {
+    themes[customThemeName] = {
+      darkner: rgbStringToArray(customThemeDarkner) || [0, 0, 0],
+      midtones: rgbStringToArray(customThemeMidtones),
+      lightner: rgbStringToArray(customThemeLightner),
+    };
+  }
+  populateThemeDropdown();  // Update the dropdown after adding a theme
+  
+  console.log(themes);
+};
+
+document.getElementById("customDarknerColor").addEventListener("input", function () {
+  let color = this.value; // Get hex value
+  let rgb = hexToRgb(color); // Convert to RGB
+  document.getElementById("customDarknerColorRgb").value = rgb; // Set RGB value
+});
+
+function hexToRgb(hex) {
+  let r = parseInt(hex.substr(1, 2), 16);
+  let g = parseInt(hex.substr(3, 2), 16);
+  let b = parseInt(hex.substr(5, 2), 16);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+
