@@ -1,0 +1,163 @@
+:root {
+    --green: #58ff42;
+}
+body {
+    min-width: 710px;
+    max-width: 710px;
+}
+
+.scss-line code {
+    font-family: monospace;
+}
+
+/* Dark Theme */
+body {
+    background-color: #282828;
+    color: #ffffff;
+}
+.form-control, .btn, .border, .code-output {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    bottom: -78px;
+    right: 276px;
+    font-size: x-small;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    text-align: center;
+    background-color: #6c757d00;
+    border: none;
+    z-index: 1500;
+}
+
+.copy-btn:hover {
+    background-color: #00ff2a4d;
+}
+
+::selection {
+    background-color: var(--green);
+    color: #032144;
+}
+
+.code-output {
+    /* min-height: 50px; */
+    margin-top: 95px;
+    min-height: 455px;
+    max-height: 455px;
+    background-color: #032144;
+    color: var(--green);
+    text-shadow: 0 0 5px var(--green), 0 0 10px var(--green), 0 0 15px var(--green);
+    /* padding: 100px !important; */
+    width: 530px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    scrollbar-color: var(--green) #032144;
+}
+
+.monitor {
+    top: 0;
+    left: 0;
+    max-width: 710px;
+    min-width: 710px;
+    opacity: 0;
+    z-index: 500;
+}
+
+#monitor-all {
+    min-width: 710px;
+    max-width: 710px;
+}
+
+#downloadButton {
+    z-index: 1000;
+    margin: 27px 0 0 0;
+    /* opacity: 0.5; */
+    box-shadow: 0 0 10px var(--green);
+    background-color: #032144;
+    color: var(--green);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-small;
+}
+
+#downloadButton:hover {
+    color: #151a1f;
+    background-color: #91ff83;
+    box-shadow: 0 0 20px var(--green);
+}
+
+.monitor-title {
+    position: absolute;
+    top: 170px;
+    right: 250px;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 180px;
+    height: 22px;
+    padding: 0;
+    text-align: center;
+    background-color: #6c757d00;
+    color: rgba(81, 29, 11, 0.475);
+    border: none;
+    z-index: 1500;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-weight: bold;
+}
+/* .code-output {
+    min-height: 50px;
+    background-color: #2b2b2b;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+} */
+
+/* .scss-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+} */
+
+/* .color-box {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+} */
+
+/* .code-box {
+    display: flex;
+    flex-direction: column;
+} */
+
