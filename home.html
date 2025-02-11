@@ -7,13 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
 
-    <title>SCSS to JSON Converter</title>
+    <title>SCSS Theme Colors Generator (Tre-Formaggi) 🧀🧀🧀</title>
 </head>
 
-<body class="container mt-5">
-    <h1 class="text-center border-bottom">SCSS Cleaner</h1>
+<body class="container mt-5" style="min-width: 700px; max-width: 730px;">
+    <h3 class="text-center border-bottom pb-4">SCSS Theme Colors Generator<br>(Tre-Formaggi) 🧀🧀🧀</h3>
 
-    <h2>SCSS input:</h2>
+    <h4>SCSS input:</h4>
     <textarea id="inputField" class="form-control mb-3" placeholder="Paste your color data here"
         onchange="reactivateCleanBtn()"></textarea>
     <div class="d-flex justify-content-between mb-3">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="position-relative">
-        <div class="row" id="clean-options" style="margin-top: 150px;">
+        <div class="row" id="clean-options" style="margin-top: 50px;">
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
@@ -34,7 +34,8 @@
                         <th class="text-info">Multiplier</th>
                         <th class="text-info">Vintage On</th>
                         <th class="text-info">Balancer</th>
-                        <th class="text-info">Add font & spacing</th>
+                        <th class="text-info">Add fonts & spacing</th>
+                        <th class="text-info">Theme Info</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,18 +50,21 @@
                             <input type="checkbox" id="vintageOn" onchange="viewCleanScss()" />
                         </td>
                         <td>
-                            <input type="number" id="balancer" class="form-control" value="200" min="200" max="500" />
+                            <input type="number" id="balancer" class="form-control" value="0" min="0" max="500" onchange="viewCleanScss()"/>
                         </td>
                         <td>
                             <input type="checkbox" id="complement" onchange="toggleCompletion(); viewCleanScss()" />
+                        </td>
+                        <td>
+                            <input type="checkbox" id="themeInfo" onchange="themeInfoToggle(); viewCleanScss()" />
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="mt-3">
-            <h4 class="monitor-title">CLEAN SCSS</h4>
+        <div class="my-3">
+            <h4 class="monitor-title">Generate SCSS</h4>
             <div id="monitor-all"
                 class="position-relative d-flex flex-column justify-content-center align-items-center">
                 <button class="btn btn-secondary mb-3 copy-btn" onclick="copyToClipboard()">
@@ -71,6 +75,26 @@
                     alt="Image" />
 
                 <pre id="cleanScssOutput" class="border p-3 code-output">
+
+
+
+       ///    //       ///     ///            //     //  
+     //  //  //      //  //  //  //        ////// //////
+    //////  //      //////  //////          //     //   
+   //  //  //      //  //  //  //   ////   // //  // // 
+  //  //  //////  //  //  //  //           ///    ///   
+
+
+                     111           111
+                   1111111       1111111
+                     111           111
+
+
+                   111               111
+                     111           111
+                        111111111111
+                    </pre>
+                <!-- <pre id="cleanScssOutput" class="border p-3 code-output">
 
 
 
@@ -89,7 +113,7 @@
                    111               111
                      111           111
                         111111111111
-                    </pre>
+                    </pre> -->
 
                 <button id="downloadButton" class="" onclick="exportCleanScssFile()">
                     Export Clean SCSS

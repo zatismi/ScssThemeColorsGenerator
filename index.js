@@ -21,6 +21,7 @@ function convertToJson() {
 
 let activeTheme, multiplier, vintageOn, balancer;
 let completion = false;
+let themeInfoEnabled = false;
 let completionText = `
 
 // =================================
@@ -162,7 +163,8 @@ function calculateColors() {
   activeTheme = document.getElementById("activeTheme").value;
   multiplier = document.getElementById("multiplier").value;
   vintageOn = document.getElementById("vintageOn").checked;
-  balancer = multiplier > 66 ? document.getElementById("balancer").value : 0;
+  themeInfo = document.getElementById("themeInfo").checked;
+  balancer = document.getElementById("balancer").value;
 
   const conditionMinMax =
     multiplier < 2 ? 1 : multiplier > 100 ? 100 : 1 * multiplier;
@@ -258,11 +260,13 @@ const colors = {
   blue,
 };
 
-function copyToClipboard() {}
+function themeInfoToggle() {
+  themeInfoEnabled = !themeInfoEnabled;
+}
 
-function displayCleanScss() {
+function themeInfoCalculator() {
   calculateColors();
-  let cleanScssString = `
+  return `
 ////// Theme Info //////
 // Name: ${activeTheme}
 // Type: Dark Mode
@@ -275,6 +279,15 @@ function displayCleanScss() {
 //     Multiplier Effect: ${multiplier == 1 ? "Real Colors" : `${multiplier} times`}
 //     Balancer:          ${balancer}
 
+`
+}
+
+themeInfo = themeInfoToggle()
+
+function displayCleanScss() {
+  calculateColors();
+  let cleanScssString = `
+${themeInfoEnabled ? themeInfoCalculator() : ""}
 //
 // Colors Pallet
 //
