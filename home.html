@@ -41,32 +41,35 @@
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <!-- Second Tab -->
-            <div>
-                <label for="customThemeName">Theme Name:</label>
-                <input type="text" id="themeName" placeholder="Enter Theme Name">
-            </div>
-            <div>
-                <label for="customDarknerColor">Darkner Color:</label>
-                <input type="color" id="customDarknerColor">
-                <div>
-                    <input type="text" id="customDarknerColorRgb" readonly>
+            <div class="form-group row mt-3">
+                <div class="col-sm-12">
+                    <label for="customThemeName" class="col-sm-4 col-form-label">Theme Name:</label>
+                    <input type="text" class="form-control" id="themeName" placeholder="Enter Theme Name">
                 </div>
             </div>
-            <div>
-                <label for="customMidtoneColor">Midtones Color:</label>
-                <input type="color" id="customMidtoneColor">
-                <div>
-                    <input type="text" id="customMidtoneColorRgb" readonly>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="customDarknerColor" class="col-sm-12 col-form-label">Darkner Color:</label>
+                    <input type="color" class="form-control" id="customDarknerColor">
+                    <input type="text" class="form-control mt-1" id="customDarknerColorRgb" readonly>
+                </div>
+                <div class="col-sm-4">
+                    <label for="customMidtoneColor" class="col-sm-12 col-form-label">Midtones Color:</label>
+                    <input type="color" class="form-control" id="customMidtoneColor">
+                    <input type="text" class="form-control mt-1" id="customMidtoneColorRgb" readonly>
+                </div>
+                <div class="col-sm-4">
+                    <label for="customLightnerColor" class="col-sm-12 col-form-label">Lightner Color:</label>
+                    <input type="color" class="form-control" id="customLightnerColor">
+                    <input type="text" class="form-control mt-1" id="customLightnerColorRgb" readonly>
                 </div>
             </div>
-            <div>
-                <label for="customLightnerColor">Lightner Color:</label>
-                <input type="color" id="customLightnerColor">
-                <div>
-                    <input type="text" id="customLightnerColorRgb" readonly>
+            <div class="form-group row">
+                <div class="col-sm-12 text-center">
+                    <button id="addCustomThemeBtn" class="btn btn-primary"
+                        onclick="adddCustomThemeAndShow(); viewCleanScss()">Add Theme</button>
                 </div>
             </div>
-            <button id="addCustomThemeBtn" onclick="adddCustomThemeAndShow(); viewCleanScss()">Add Theme</button>
         </div>
     </div>
 
