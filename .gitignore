@@ -1,0 +1,21 @@
+# Node modules
+/node_modules/
+
+# Files to be Deleted
+/(DELETE)/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files (if you're using VSCode)
+.vscode/
+
+# npm package lock
+package-lock.json
+
+# Environment files
+.env
